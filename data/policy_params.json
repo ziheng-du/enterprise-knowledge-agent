@@ -1,0 +1,93 @@
+{
+  "comment": "结构化制度参数（模拟数据），数值与 data/raw_docs 中的制度文档保持一致，供 policy_lookup 工具查询",
+  "entries": [
+    {
+      "key": "office_supplies_limit",
+      "name": "日常办公用品报销单笔上限",
+      "keywords": ["办公用品", "文具", "办公耗材"],
+      "value": 500,
+      "unit": "元/笔",
+      "source": "报销制度.md"
+    },
+    {
+      "key": "business_meal_limit",
+      "name": "业务招待餐费人均标准",
+      "keywords": ["业务招待", "招待费", "招待餐费", "请客"],
+      "value": 200,
+      "unit": "元/人/次",
+      "source": "报销制度.md"
+    },
+    {
+      "key": "communication_allowance_manager",
+      "name": "通讯补贴（经理级及以上）",
+      "keywords": ["通讯补贴", "话费补贴", "电话费"],
+      "value": 300,
+      "unit": "元/月",
+      "source": "报销制度.md"
+    },
+    {
+      "key": "communication_allowance_staff",
+      "name": "通讯补贴（普通员工）",
+      "keywords": ["通讯补贴", "话费补贴", "电话费"],
+      "value": 100,
+      "unit": "元/月",
+      "source": "报销制度.md"
+    },
+    {
+      "key": "training_approval_threshold",
+      "name": "外部培训双重审批金额门槛",
+      "keywords": ["培训", "培训费", "外部培训"],
+      "value": 1000,
+      "unit": "元/次",
+      "source": "报销制度.md"
+    },
+    {
+      "key": "late_night_taxi_limit",
+      "name": "加班打车回家报销单程上限（22:00以后）",
+      "keywords": ["打车", "出租车", "加班打车", "网约车"],
+      "value": 150,
+      "unit": "元/程",
+      "source": "报销制度.md"
+    },
+    {
+      "key": "reimburse_deadline_days",
+      "name": "报销提交时限（费用发生后）",
+      "keywords": ["报销时限", "报销期限", "多久内报销", "报销提交"],
+      "value": 30,
+      "unit": "天",
+      "source": "报销制度.md"
+    },
+    {
+      "key": "hotel_tier1_staff",
+      "name": "一线城市住宿标准（普通员工）",
+      "keywords": ["住宿", "酒店", "住宿标准", "出差住宿", "一线城市"],
+      "value": 500,
+      "unit": "元/晚",
+      "source": "差旅政策.md"
+    },
+    {
+      "key": "hotel_tier2_staff",
+      "name": "二线城市住宿标准（普通员工）",
+      "keywords": ["住宿", "酒店", "住宿标准", "出差住宿", "二线城市"],
+      "value": 400,
+      "unit": "元/晚",
+      "source": "差旅政策.md"
+    },
+    {
+      "key": "travel_meal_allowance",
+      "name": "国内出差餐费补贴",
+      "keywords": ["餐补", "出差补贴", "餐费补贴", "出差餐补"],
+      "value": 100,
+      "unit": "元/天",
+      "source": "差旅政策.md"
+    },
+    {
+      "key": "city_transport_limit",
+      "name": "出差市内交通费每日上限",
+      "keywords": ["市内交通", "交通费", "出差交通"],
+      "value": 150,
+      "unit": "元/天",
+      "source": "差旅政策.md"
+    }
+  ]
+}

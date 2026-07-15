@@ -1,0 +1,26 @@
+[
+  {
+    "employee_id": "E1001",
+    "name": "张小明",
+    "role": "employee",
+    "hire_date": "2023-07-01",
+    "password_salt": "84a2d0dc4a3f4446de5912e845edb4f4",
+    "password_hash": "d6b9a1fe5078b368d8d22d6833a8decbf5d727cef45886ff381699a7b9f5885f"
+  },
+  {
+    "employee_id": "I2001",
+    "name": "李实习",
+    "role": "intern",
+    "hire_date": "2025-03-01",
+    "password_salt": "255e79293f1da85a373443fd4b442160",
+    "password_hash": "e10bd28b1679dd6bd14fd7d051029130d9b4dbf66cdb6996347760b01dcf816f"
+  },
+  {
+    "employee_id": "A9001",
+    "name": "王管理",
+    "role": "admin",
+    "hire_date": "2018-01-15",
+    "password_salt": "d1f636c33ed97ea035023c09188f19ac",
+    "password_hash": "fbdf918e8892291f1438470ff7f4fed6db3fb7912ee57fb11d6050d511ae0b2d"
+  }
+]

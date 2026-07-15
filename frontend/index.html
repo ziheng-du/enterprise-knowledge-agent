@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 避免浏览器沿用登录改造前的旧页面缓存 -->
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <title>企业新员工知识助手</title>
+  <link rel="stylesheet" href="/style.css?v=auth1" />
+</head>
+<body>
+  <!-- 默认展示登录页：即使 JS 未跑完，也不会落到「无通行证的聊天框」 -->
+  <div id="login-view" class="login-view">
+    <div class="login-card">
+      <h1>企业新员工知识助手</h1>
+      <p class="login-hint">请使用工号与密码登录，系统将按你的身份控制可见制度范围</p>
+      <form id="login-form" class="login-form" autocomplete="on">
+        <label>
+          工号
+          <input id="employee-id" name="employee_id" type="text" required placeholder="例如 E1001" autocomplete="username" />
+        </label>
+        <label>
+          密码
+          <input id="password" name="password" type="password" required placeholder="请输入密码" autocomplete="current-password" />
+        </label>
+        <p id="login-error" class="login-error" role="alert" hidden></p>
+        <button id="login-btn" type="submit">登录</button>
+      </form>
+      <p class="login-demo">演示账号（密码均为 demo123）：E1001 员工 · I2001 实习生 · A9001 管理员</p>
+    </div>
+  </div>
+
+  <!-- 已登录：聊天主界面（默认隐藏，校验 token 后再显示） -->
+  <div id="app-view" class="app hidden">
+    <header class="header">
+      <div class="header-main">
+        <h1>企业新员工知识助手</h1>
+        <p class="subtitle">制度查询 · 年假计算 · 报销参数</p>
+      </div>
+      <div class="user-bar" id="user-bar" aria-live="polite">
+        <span id="user-display" class="user-display"></span>
+        <button id="logout-btn" type="button" class="logout-btn">退出</button>
+      </div>
+    </header>
+
+    <main id="messages" class="messages" aria-live="polite"></main>
+
+    <footer class="composer">
+      <textarea
+        id="input"
+        rows="2"
+        placeholder="例如：报销要在多久内提交？我的年假有几天？"
+        autofocus
+      ></textarea>
+      <button id="send" type="button">发送</button>
+    </footer>
+  </div>
+  <!-- Markdown 渲染与 XSS 清洗（无构建步骤的静态页用 CDN） -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+  <script src="/script.js?v=auth1"></script>
+</body>
+</html>

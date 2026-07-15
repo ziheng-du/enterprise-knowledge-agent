@@ -1,0 +1,9 @@
+{
+  "员工手册.md": "public",
+  "请假与年假政策.md": "public",
+  "报销制度.md": "internal",
+  "差旅政策.md": "internal",
+  "高管薪酬指引.md": "confidential",
+  "IT设备领用须知.docx": "public",
+  "消防与安全须知.pdf": "public"
+}

@@ -1,0 +1,24 @@
+{"id": "rag_expense_deadline", "type": "rag", "question": "报销要在多久内提交", "expect_route": ["rag", "both"], "expect_keywords": ["30"], "expect_sources_any": ["报销"], "expect_refuse": false}
+{"id": "rag_travel", "type": "rag", "question": "差旅住宿标准是什么", "expect_route": ["rag", "both"], "expect_keywords": [], "expect_sources_any": ["差旅"], "expect_refuse": false}
+{"id": "tool_leave", "type": "tool", "question": "我2023年7月1日入职，年假有几天", "expect_route": ["tool", "both"], "expect_tool": "leave_calculator", "expect_keywords": [], "expect_refuse": false}
+{"id": "tool_policy_office", "type": "tool", "question": "办公用品报销上限是多少", "expect_route": ["tool", "both", "rag"], "expect_keywords": [], "expect_refuse": false}
+{"id": "both_leave_policy", "type": "both", "question": "我入职3年了年假几天，公司年假政策是什么", "expect_route": ["both", "tool", "rag"], "expect_keywords": [], "expect_refuse": false}
+{"id": "refuse_weather", "type": "refuse", "question": "今天天气如何", "expect_route": ["rag", "both", "tool"], "expect_keywords": ["未找到"], "expect_refuse": true}
+{"id": "refuse_stock", "type": "refuse", "question": "帮我推荐一支股票", "expect_route": ["rag", "both", "tool"], "expect_keywords": ["未找到"], "expect_refuse": true}
+{"id": "rag_attendance", "type": "rag", "question": "公司考勤制度怎么规定的", "expect_route": ["rag", "both"], "expect_keywords": [], "expect_sources_any": ["员工手册", "考勤"], "expect_refuse": false}
+{"id": "rag_leave_apply", "type": "rag", "question": "年假申请流程是什么", "expect_route": ["rag", "both"], "expect_keywords": [], "expect_sources_any": ["年假", "请假"], "expect_refuse": false}
+{"id": "tool_leave_2022", "type": "tool", "question": "入职日期2022-01-15，我有多少天年假", "expect_route": ["tool", "both"], "expect_tool": "leave_calculator", "expect_keywords": [], "expect_refuse": false}
+{"id": "multi_turn_followup", "type": "multi_turn", "turns": [{"question": "报销制度里提交时限是多久", "expect_keywords": ["30"]}, {"question": "那差旅呢有没有类似规定", "expect_keywords": []}], "expect_refuse": false}
+{"id": "rag_reimburse_flow", "type": "rag", "question": "报销需要哪些审批环节", "expect_route": ["rag", "both"], "expect_keywords": [], "expect_sources_any": ["报销"], "expect_refuse": false}
+{"id": "rag_travel_transport", "type": "rag", "question": "差旅可以坐什么交通工具", "expect_route": ["rag", "both"], "expect_keywords": [], "expect_sources_any": ["差旅"], "expect_refuse": false}
+{"id": "rag_expense_invoice", "type": "rag", "question": "报销需要提供发票吗", "expect_route": ["rag", "both"], "expect_keywords": [], "expect_sources_any": ["报销"], "expect_refuse": false}
+{"id": "tool_leave_missing_date", "type": "tool", "question": "我年假有几天", "expect_route": ["tool", "both", "rag"], "expect_keywords": [], "expect_refuse": false}
+{"id": "tool_policy_meal", "type": "tool", "question": "餐费报销额度上限是多少", "expect_route": ["tool", "both", "rag"], "expect_keywords": [], "expect_refuse": false}
+{"id": "refuse_lottery", "type": "refuse", "question": "帮我预测明天的彩票号码", "expect_route": ["rag", "both", "tool"], "expect_keywords": ["未找到"], "expect_refuse": true}
+{"id": "rag_handbook_onboarding", "type": "rag", "question": "新员工入职需要办理哪些手续", "expect_route": ["rag", "both"], "expect_keywords": [], "expect_sources_any": ["员工手册", "入职"], "expect_refuse": false}
+{"id": "multi_turn_leave_then_policy", "type": "multi_turn", "turns": [{"question": "我2021年3月1日入职，年假几天", "expect_keywords": []}, {"question": "那申请流程呢", "expect_keywords": []}], "expect_refuse": false}
+{"id": "rag_leave_carryover", "type": "rag", "question": "年假可以跨年结转吗", "expect_route": ["rag", "both"], "expect_keywords": [], "expect_sources_any": ["年假", "请假"], "expect_refuse": false}
+{"id": "both_expense_and_calc", "type": "both", "question": "办公用品报销上限多少，报销要在多少天内交", "expect_route": ["both", "tool", "rag"], "expect_keywords": ["30"], "expect_refuse": false}
+{"id": "rag_hybrid_30days", "type": "rag", "question": "发生后30天内必须提交的费用申请是什么", "expect_route": ["rag", "both"], "expect_keywords": ["30"], "expect_sources_any": ["报销"], "expect_refuse": false}
+{"id": "refuse_crypto", "type": "refuse", "question": "现在买哪个加密货币能翻倍", "expect_route": ["rag", "both", "tool"], "expect_keywords": ["未找到"], "expect_refuse": true}
+{"id": "offline_structure_routes", "type": "offline", "note": "结构校验由 run_eval --offline 覆盖，不调用 LLM"}
