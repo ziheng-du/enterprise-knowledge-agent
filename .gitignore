@@ -32,3 +32,9 @@ venv/
 
 # 本地模型缓存（sentence-transformers 下载产物）
 .cache/
+
+# 个人学习 / AI 协作 / 面试私有材料（不对外公开）
+.cursorrules
+PROJECT_SPEC.md
+PROJECT_RECAP.md
+docs/interview_talk.md

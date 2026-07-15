@@ -289,10 +289,7 @@ python scripts/run_eval.py --output docs/eval_report.md       # 有 Key：全量
 
 - [docs/retrieval.md](docs/retrieval.md) — Hybrid 检索模式、RRF、索引刷新与分词说明
 - [docs/eval_report.md](docs/eval_report.md) — 标准场景评测报告（可由脚本刷新）
-- [docs/interview_talk.md](docs/interview_talk.md) — 面试讲解提纲
 - [docs/chunking_comparison.md](docs/chunking_comparison.md) — 切分策略对比笔记
-- [PROJECT_RECAP.md](PROJECT_RECAP.md) — 文件级复盘与速查
-- [PROJECT_SPEC.md](PROJECT_SPEC.md) — 原始开发规格（历史参考）
 
 ---
 
