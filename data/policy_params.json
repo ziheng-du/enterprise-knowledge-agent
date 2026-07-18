@@ -88,6 +88,54 @@
       "value": 150,
       "unit": "元/天",
       "source": "差旅政策.md"
+    },
+    {
+      "key": "comp_leave_deadline_days",
+      "name": "调休须在产生之日起休完的时限",
+      "keywords": ["调休时限", "调休几天内", "调休多久", "多久内调休"],
+      "value": 30,
+      "unit": "天",
+      "source": "加班与调休管理办法.md"
+    },
+    {
+      "key": "remote_work_days_per_month",
+      "name": "正式员工每月远程办公天数上限",
+      "keywords": ["远程办公", "在家办公", "远程天数", "每月远程"],
+      "value": 8,
+      "unit": "天/月",
+      "source": "远程办公与弹性工时办法.md"
+    },
+    {
+      "key": "supplementary_medical_wait_days",
+      "name": "补充医疗保险起缴/生效等待天数（自入职日起）",
+      "keywords": ["补充医疗", "商业保险", "满多少天保险", "入职多少天保险"],
+      "value": 30,
+      "unit": "天",
+      "source": "福利与商业保险说明.md"
+    },
+    {
+      "key": "procurement_tender_threshold",
+      "name": "须招标或邀请询价的单笔采购金额门槛",
+      "keywords": ["招标", "采购门槛", "采购金额", "询价"],
+      "value": 5000,
+      "unit": "元",
+      "source": "采购与供应商管理暂行规定.md"
+    },
+    {
+      "key": "password_min_length",
+      "name": "企业账号登录口令最小长度",
+      "keywords": ["密码长度", "口令", "密码几位", "账号密码"],
+      "value": 12,
+      "unit": "位",
+      "source": "信息安全与账号管理规范.md"
+    },
+    {
+      "key": "data_breach_report_hours",
+      "name": "客户数据泄露事件上报时限",
+      "keywords": ["泄露上报", "数据泄露", "多久内上报", "24小时"],
+      "value": 24,
+      "unit": "小时",
+      "source": "客户数据与隐私保护指引.md"
     }
   ]
 }

@@ -20,3 +20,11 @@
 ## 分词
 
 未引入 jieba：英文/数字按词，中文按字 + bigram（见 `app/rag/bm25_index.py`），依赖面更小，适合作品集本地复现。
+
+## 与纯向量对照
+
+同一查询集上对比 `vector` / `hybrid` 的实验记录见 [retrieval_comparison.md](retrieval_comparison.md)；复现：
+
+```bash
+python scripts/compare_retrieval_modes.py --output docs/retrieval_comparison.md
+```

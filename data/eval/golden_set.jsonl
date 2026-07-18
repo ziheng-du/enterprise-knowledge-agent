@@ -21,4 +21,18 @@
 {"id": "both_expense_and_calc", "type": "both", "question": "办公用品报销上限多少，报销要在多少天内交", "expect_route": ["both", "tool", "rag"], "expect_keywords": ["30"], "expect_refuse": false}
 {"id": "rag_hybrid_30days", "type": "rag", "question": "发生后30天内必须提交的费用申请是什么", "expect_route": ["rag", "both"], "expect_keywords": ["30"], "expect_sources_any": ["报销"], "expect_refuse": false}
 {"id": "refuse_crypto", "type": "refuse", "question": "现在买哪个加密货币能翻倍", "expect_route": ["rag", "both", "tool"], "expect_keywords": ["未找到"], "expect_refuse": true}
+{"id": "rag_obsolete_45_days", "type": "rag", "question": "费用发生后45天内还能报销吗", "expect_route": ["rag", "both"], "expect_keywords": ["30", "废止"], "expect_sources_any": ["报销", "废止", "FAQ"], "expect_refuse": false}
+{"id": "rag_comp_leave_deadline", "type": "rag", "question": "调休要在多少天内休完", "expect_route": ["rag", "both"], "expect_keywords": ["30"], "expect_sources_any": ["调休", "加班"], "expect_refuse": false}
+{"id": "rag_supplementary_medical", "type": "rag", "question": "入职满多少天有补充医疗", "expect_route": ["rag", "both", "tool"], "expect_keywords": ["30"], "expect_refuse": false}
+{"id": "rag_late_30_minutes", "type": "rag", "question": "迟到超过30分钟怎么处理", "expect_route": ["rag", "both"], "expect_keywords": ["事假"], "expect_sources_any": ["员工手册", "考勤"], "expect_refuse": false}
+{"id": "rag_travel_reimburse_joint", "type": "rag", "question": "差旅住宿标准和报销提交时限分别是什么", "expect_route": ["rag", "both"], "expect_keywords": ["500", "30"], "expect_sources_any": ["联查", "差旅", "报销"], "expect_refuse": false}
+{"id": "rag_noise_team_building", "type": "rag", "question": "团建花絮里说报销很宽松，到底按几天算", "expect_route": ["rag", "both"], "expect_keywords": ["30"], "expect_sources_any": ["报销", "FAQ", "废止", "花絮"], "expect_refuse": false}
+{"id": "rag_remote_days", "type": "rag", "question": "正式员工每月远程办公最多几天", "expect_route": ["rag", "both"], "expect_keywords": ["8"], "expect_sources_any": ["远程"], "expect_refuse": false}
+{"id": "rag_password_length", "type": "rag", "question": "企业账号密码最少要几位", "expect_route": ["rag", "both"], "expect_keywords": ["12"], "expect_sources_any": ["信息安全", "账号"], "expect_refuse": false}
+{"id": "rag_breach_report_hours", "type": "rag", "question": "客户数据泄露要在多久内上报", "expect_route": ["rag", "both"], "expect_keywords": ["24"], "expect_sources_any": ["客户数据", "隐私"], "expect_refuse": false}
+{"id": "tool_policy_comp_leave", "type": "tool", "question": "调休时限是多少天", "expect_route": ["tool", "both", "rag"], "expect_keywords": ["30"], "expect_refuse": false}
+{"id": "tool_policy_remote", "type": "tool", "question": "每月远程办公天数上限是多少", "expect_route": ["tool", "both", "rag"], "expect_keywords": ["8"], "expect_refuse": false}
+{"id": "tool_policy_medical_wait", "type": "tool", "question": "补充医疗入职满多少天生效", "expect_route": ["tool", "both", "rag"], "expect_keywords": ["30"], "expect_refuse": false}
+{"id": "multi_turn_30_disambiguate", "type": "multi_turn", "turns": [{"question": "报销要在多久内提交", "expect_keywords": ["30"]}, {"question": "那调休呢，时限也是一样吗", "expect_keywords": ["30"]}], "expect_refuse": false}
+{"id": "refuse_horoscope", "type": "refuse", "question": "根据星座帮我分析一下本周运势", "expect_route": ["rag", "both", "tool"], "expect_keywords": ["未找到"], "expect_refuse": true}
 {"id": "offline_structure_routes", "type": "offline", "note": "结构校验由 run_eval --offline 覆盖，不调用 LLM"}

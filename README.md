@@ -82,7 +82,7 @@ flowchart LR
 制度文本既有语义相近表述，也有「报销」「30 天」等专名与数字；默认用两路召回再融合。
 
 - 检索默认使用 Hybrid：向量相似度召回与 BM25 关键词召回经 RRF（倒数排名融合）合并后取 Top-K。
-- 可通过 `RETRIEVAL_MODE=vector` 切换为纯向量，便于对比 Hybrid 收益。
+- 可通过 `RETRIEVAL_MODE=vector` 切换为纯向量，便于对比 Hybrid 收益；对照实验见 [docs/retrieval_comparison.md](docs/retrieval_comparison.md)（扩充后 21 条查询：来源 Hit@4 两侧 21/21，Top-1 关键词 18/19，Hybrid Top-4 平均独特来源数略高）。
 - 向量分数低于阈值的片段不进入上下文；入库时同步刷新关键词索引，保证两路语料一致。
 - 中文关键词侧采用轻量切分（字与二元组为主），避免引入过重分词依赖。
 - 检索与生成分离：`rag/retriever.py` 可独立调用；回答生成在后续节点完成。更多细节见 [docs/retrieval.md](docs/retrieval.md)。
@@ -117,7 +117,7 @@ flowchart LR
 - 判定维度：路由是否落在允许范围、是否调用预期工具、答案是否含关键信息、拒答是否出现约定表述、来源是否相关等。
 - 路由允许合理容差（如 `rag` / `both`），因分诊由模型完成、存在非确定性。
 - 无 API Key 时可做结构校验（`--offline`）；有 Key 可全量跑并导出按题型分组的报告。
-- 本地一次全量结果约 **22/23（95.7%）**，拒答题型中有一条话术未命中约定关键词；详见 [docs/eval_report.md](docs/eval_report.md)。
+- 本地一次全量结果约 **34/37（91.9%）**（语料扩充后黄金集）；拒答仍有话术波动，详见 [docs/eval_report.md](docs/eval_report.md)。
 
 ---
 
@@ -281,13 +281,15 @@ python scripts/run_eval.py --offline                          # 无 Key：校验
 python scripts/run_eval.py --output docs/eval_report.md       # 有 Key：全量并写报告
 ```
 
-评测覆盖制度问答、工具、混合、拒答、同会话多轮；报告含按题型分组的通过率与失败用例说明。数字以 [docs/eval_report.md](docs/eval_report.md) 当前内容为准（近期全量约 22/23，95.7%）。
+评测覆盖制度问答、工具、混合、拒答、同会话多轮；报告含按题型分组的通过率与失败用例说明。数字以 [docs/eval_report.md](docs/eval_report.md) 当前内容为准（扩充语料后全量约 34/37，91.9%）。
 
 ---
 
 ## 文档索引
 
 - [docs/retrieval.md](docs/retrieval.md) — Hybrid 检索模式、RRF、索引刷新与分词说明
+- [docs/retrieval_comparison.md](docs/retrieval_comparison.md) — 纯向量 vs Hybrid 对照实验（可复现）
+- [docs/corpus_expansion.md](docs/corpus_expansion.md) — 示例公司 raw_docs 扩充说明与评测设计
 - [docs/eval_report.md](docs/eval_report.md) — 标准场景评测报告（可由脚本刷新）
 - [docs/chunking_comparison.md](docs/chunking_comparison.md) — 切分策略对比笔记
 
