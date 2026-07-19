@@ -22,6 +22,9 @@ data/vector_db/*
 data/sessions.db
 data/*.db
 
+# Docker / 本地运行期数据（向量库、会话库等）
+data/runtime/
+
 # 虚拟环境
 .venv/
 venv/

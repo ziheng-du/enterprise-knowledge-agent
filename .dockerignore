@@ -1,0 +1,36 @@
+# 构建镜像时忽略这些路径，加快 build、减小上下文体积
+# （可以把它理解成「打包快递时不要把垃圾一起塞进箱子」）
+
+.git
+.gitignore
+.cursor
+.cursorrules
+
+# 虚拟环境与缓存（镜像里会重新 pip install）
+.venv
+venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.coverage
+htmlcov
+.cache
+*.egg-info
+
+# 本地密钥与私有笔记：绝不能打进镜像
+.env
+PROJECT_SPEC.md
+PROJECT_RECAP.md
+PROJECT_FACTS.md
+docs/interview_talk.md
+docs/
+
+# 本地运行产物：容器里用 volume 挂载，不写死进镜像层
+data/vector_db
+data/sessions.db
+data/*.db
+
+# IDE / 本地环境文件（不要误伤 data/raw_docs 下的制度 .md）
+.idea
+.vscode
+environment.yml
